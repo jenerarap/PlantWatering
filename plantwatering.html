@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Plant Water Checker</title>
+  <style>
+    body{font-family:Arial, sans-serif;background:#f0f7f2;min-height:100vh;display:flex;align-items:center;justify-content:center;margin:0}
+    .card{background:#fff;width:100%;max-width:400px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.1);padding:20px;text-align:center}
+    .plant-img{width:200px;height:200px;margin:0 auto 16px auto;overflow:hidden}
+    .plant-img img{max-width:100%;max-height:100%;}
+    .status{font-weight:600;margin-bottom:16px;font-size:18px}
+    .status.needs{color:#b32b2b}
+    .status.happy{color:#2e8b57}
+    button{padding:12px 20px;border:none;border-radius:8px;background:#2e8b57;color:#fff;font-weight:bold;cursor:pointer}
+    button:hover{background:#256f47}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="plant-img">
+      <img id="plantImg" src="sadplant.jpg" alt="Sad plant" />
+    </div>
+    <div class="status needs" id="statusText">Needs water 💧</div>
+    <button id="waterBtn">Water Plant</button>
+  </div>
+
+  <script>
+    const plantImg = document.getElementById('plantImg');
+    const statusText = document.getElementById('statusText');
+    const waterBtn = document.getElementById('waterBtn');
+
+    waterBtn.addEventListener('click', ()=>{
+      plantImg.src = "plant.jpg";
+      statusText.textContent = "Happy — no water needed";
+      statusText.className = "status happy";
+    });
+  </script>
+</body>
+</html>
+
